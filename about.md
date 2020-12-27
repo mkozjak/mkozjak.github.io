@@ -9,7 +9,7 @@ permalink: /about/
   - Greenfield project based on Amazon Web Services
   - Lambda, DynamoDB, AWS IoT, ECS, IAM integration
 
-#### Products I helped building
+#### Products I helped to build
 - Aug 2018 - **Site Reliability Engineer**, Keller Williams Realty Consumer
   - Cloud application rollout pipelines design and implementation
   - Terraform, Kubernetes, Docker, Serverless, IAM integration, Google Cloud Platform
