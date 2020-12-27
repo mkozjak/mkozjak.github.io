@@ -6,11 +6,13 @@ permalink: /about/
 
 #### What I'm currently working on
 - Developing an **IoT edge gateway platform**, <a href="https://www.edgebind.io">Edgebind</a>
+  - Greenfield project based on Amazon Web Services
+  - Lambda, DynamoDB, AWS IoT, ECS, IAM integration
 
 #### Products I helped building
 - Aug 2018 - **Site Reliability Engineer**, Keller Williams Realty Consumer
-  - Cloud application rollout pipelines design
-  - Terraform, Kubernetes, Docker, Serverless, IAM integration
+  - Cloud application rollout pipelines design and implementation
+  - Terraform, Kubernetes, Docker, Serverless, IAM integration, Google Cloud Platform
 - Feb 2015 - **Senior Software Engineer**, uniqCast
   - Core business services
   - IPTV content management
