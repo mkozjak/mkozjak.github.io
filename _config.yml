@@ -1,44 +1,68 @@
 # Site settings
-title: Mario Kozjak
-description: 'A product-oriented software engineer. Passionate about the operations side of things. Spare-time musician.'
-url: 'https://mario.kozjak.io'
-baseurl: ''
-# google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
+title_left    : "Mario "
+title_right   : "Kozjak" # default: ""
+description   : "Mario Kozjak's blog"
+keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
+url           : https://mario.kozjak.io # site url
+baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
+cover         : "" # image uri like logo/cover image for site seo
 
-author:
-  name: 'Mario Kozjak'
-  email: kozjakm1@gmail.com
-  twitter_username: mariokozjak
-  facebook_username: mkozjak1
-  github_username:  mkozjak
-  linkedin_username: mario-kozjak-a9665b72
-  lastfm_username: archman47
-
-defaults:
-  -
-    scope:
-      path: ''
-      type: 'posts'
-    values:
-        layout: 'post'
+google_analytics  : UA-XXXXX-XX
+twitter_username  : "mariokozjak"
+facebook_username  : "mkozjak1"
+github_username   : "mkozjak"
+linkedin_username : "mario-kozjak-a9665b72"
+lastfm_username : "archman47"
+comments_enabled  : false # if enabled (set to true), please provide your disqus_username
+disqus_shortname  : ""
+postshare_enabled : false
+avatar            : "https://avatars2.githubusercontent.com/u/3506172?s=460&u=12b3e79646d7f9d1180a090167ecff0242808d5f&v=4"
 
 # Build settings
-destination: _site
-paginate: 10
-permalink: /:year/:title/
-markdown: kramdown
-highlighter: rouge
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : rouge
 
+source      : ./
+destination : ./_site
+
+# Sass configuration
 sass:
-    sass_dir: _sass
-    style: compressed
+  sass_dir  : assets/scss
+  style     : compressed # expanded
 
-kramdown:
-  # use Github Flavored Markdown
-  input: GFM
-  # do not replace newlines by <br>s
-  hard_wrap: false
+# Author settings
+author:
+  name     : "Mario Kozjak"
 
-plugins: ['jekyll-paginate']
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+plugins:
+  - jekyll-sitemap
+  - bourbon
+  - jekyll-paginate
+
+# navbar pages
+navbar:
+  - slug : about
+    title: About
+  - slug : blog
+    title: Blog
+
+exclude:
+  - "gulp"
+  - "node_modules"
+  - "bower"
+  - "bower_components"
+  - "config.rb"
+  - "src"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - ".rvmrc"
+  - ".rbenv-version"
+  - "package.json"
+  - "gulpfile.js"
+  - "README.md"
+  - "Rakefile"
+  - "changelog.md"
+  - "script"
+  - "vendor"
+  - "thinkspace.gemspec"
