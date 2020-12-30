@@ -19,7 +19,7 @@ permalink: /about/
 - Jan 2013 - **Systems and Software Engineer**, <a href="https://www.iskon.hr/Iskon.TV-najpametnija-i-najmodernija-televizija">Iskon.TV</a>
   - Vestel IP7350/IP7630 STB integration
   - Remote management system development for Customer STBs
-- Nov 2011 - **Linux System Administrator**, <a href="https://www.iskon.hr/Iskon.TV-najpametnija-i-najmodernija-televizija">Iskon Broadband Services</a>
+- Nov 2011 - **Linux System Administrator**, <a href="https://www.iskon.hr">Iskon Broadband Services</a>
   - Management and configuration of Customer STBs, CPEs and DSLAMs
   - Technical support
   - 24/7 On-Call
