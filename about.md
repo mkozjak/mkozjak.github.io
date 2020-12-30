@@ -10,16 +10,16 @@ permalink: /about/
   - Lambda, DynamoDB, AWS IoT, ECS, IAM integration
 
 #### Products I helped to build
-- Aug 2018 - **Site Reliability Engineer**, Keller Williams Realty Consumer
+- Aug 2018 - **Site Reliability Engineer**, Keller Williams Realty <a href="https://apps.apple.com/us/app/kw-buy-sell-real-estate/id652512924">Consumer</a>
   - Cloud application rollout pipelines design and implementation
   - Terraform, Kubernetes, Docker, Serverless, IAM integration, Google Cloud Platform
-- Feb 2015 - **Senior Software Engineer**, uniqCast
+- Feb 2015 - **Senior Software Engineer**, <a href="https://www.uniqcast.com">uniqCast</a>
   - Core business services
   - IPTV content management
-- Jan 2013 - **Systems and Software Engineer**, Iskon.TV
+- Jan 2013 - **Systems and Software Engineer**, <a href="https://www.iskon.hr/Iskon.TV-najpametnija-i-najmodernija-televizija">Iskon.TV</a>
   - Vestel IP7350/IP7630 STB integration
   - Remote management system development for Customer STBs
-- Nov 2011 - **Linux System Administrator**, Iskon Broadband Services
+- Nov 2011 - **Linux System Administrator**, <a href="https://www.iskon.hr/Iskon.TV-najpametnija-i-najmodernija-televizija">Iskon Broadband Services</a>
   - Management and configuration of Customer STBs, CPEs and DSLAMs
   - Technical support
   - 24/7 On-Call
