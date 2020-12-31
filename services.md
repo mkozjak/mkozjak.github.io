@@ -9,7 +9,7 @@ permalink: /services/
 Common scenarios where I deliver successful projects:
 1.  Provide guidance on software development and deployment **methodologies** in the early stages of your project.
 1.  **Design** and **architect** scalable and reliable cloud and hybrid systems.
-1.  Implement Git techniques such as **GitHub Flow** and **Gitflow** to split your application deployments between production, staging, QA and development environments.
+1.  Implement Git techniques such as **GitHub Flow** and **GitFlow** to split your application deployments between production, staging, QA and development environments.
 1.  Scale your applications using managed **container** services such as AWS ECS and GCP App Engine or managed **Kubernetes** services such as AWS EKS and GCP GKE.
 1.  Secure your application environments defining least-privilege **IAM policies** for your workloads and **safeguarding** your APIs using firewalls and CDN/Load Balancing services.
 1.  Implement **custom solutions** required for your products.
