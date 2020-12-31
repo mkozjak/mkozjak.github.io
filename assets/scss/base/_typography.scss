@@ -124,12 +124,20 @@ em {
 }
 
 ul,
-ol,
 dl {
     margin-top: 0;
     margin-left: 1.2em;
     margin-bottom: 1rem;
     list-style-type: circle;
+    list-style-position: outside;
+    list-style-image: none;
+}
+
+ol {
+    margin-top: 0;
+    margin-left: 1.2em;
+    margin-bottom: 1rem;
+    list-style-type: decimal;
     list-style-position: outside;
     list-style-image: none;
 }
