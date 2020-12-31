@@ -5,6 +5,7 @@ permalink: /services/
 ---
 
 ### What an experienced DevOps practitioner can do for you?
+
 Common scenarios where I deliver successful projects:
 1.  Provide guidance on software development and deployment methodologies in the early stages of your project.
 1.  Design and architect scalable and reliable cloud and hybrid systems.
@@ -17,7 +18,6 @@ Common scenarios where I deliver successful projects:
 1.  Import and configure your current cloud infrastructure with Infrastructure-as-Code using tools such as Terraform, CloudFormation.
 1.  Package your applications into Docker containers and make them publicly available.
 
-
 ### Why is Mario Kozjak the right fit for your project?
 
 1.  I take full ownership over the things I build.
@@ -27,3 +27,9 @@ Common scenarios where I deliver successful projects:
 1.  I believe in simplicity over complexity.
 1.  I care about conventions.
 1.  I'm an avid open-source contributor.
+
+### Ready to start the project together?
+
+I can't wait to get more details on the product we're going to be building!
+
+Please <a href="mailto:kozjakm1@gmail.com" target="_blank">email me</a></li> and I will be more than happy to come back to you as soon as possible!
