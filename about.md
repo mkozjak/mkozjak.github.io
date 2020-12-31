@@ -37,6 +37,7 @@ permalink: /about/
 
 #### Contact
 - <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">linkedin</a>
+- <a target="_blank" href="https://chronzy.com/{{ site.chronzy_username }}">chronzy</a>
 - <a target="_blank" href="https://www.twitter.com/{{ site.twitter_username }}">twitter</a>
 - <a target="_blank" href="http://fb.me/{{ site.facebook_username }}">facebook</a>
 - <a href="mailto:kozjakm1@gmail.com" target="_blank">email</a>
