@@ -16,3 +16,14 @@ Common scenarios where I deliver successful projects:
 1.  Migrate your on-prem applications to the cloud environment such as AWS, GCP and Azure.
 1.  Import and configure your current cloud infrastructure with Infrastructure-as-Code using tools such as Terraform, CloudFormation.
 1.  Package your applications into Docker containers and make them publicly available.
+
+
+### Why is Mario Kozjak the right fit for your project?
+
+1.  I take full ownership over the things I build.
+1.  I am highly autonomous and can find my way around every obstacle that may come my way.
+1.  I have over 10 years of experience dealing with development, deployment and integration of various in-house, 3rd party and open-source systems spanning industries like IPTV, ISP, Industrial and Real Estate.
+1.  I prefer quality over quantity.
+1.  I believe in simplicity over complexity.
+1.  I care about conventions.
+1.  I'm an avid open-source contributor.
