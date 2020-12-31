@@ -32,4 +32,4 @@ Common scenarios where I deliver successful projects:
 
 I can't wait to get more details on the product we're going to be building!
 
-Please <a href="mailto:kozjakm1@gmail.com" target="_blank">email me</a></li> and I will be more than happy to come back to you as soon as possible!
+Please <a href="mailto:kozjakm1@gmail.com" target="_blank">email me</a> and I will be more than happy to come back to you as soon as possible!
