@@ -4,7 +4,6 @@ title: Services
 permalink: /services/
 ---
 
-About blog page
 ### What an experienced DevOps practitioner can do for you?
 Common scenarios where I deliver successful projects:
 - migrate your on-prem applications to the cloud (AWS, GCP, Azure)
