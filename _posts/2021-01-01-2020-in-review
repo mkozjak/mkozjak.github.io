@@ -1,0 +1,29 @@
+---
+layout: post
+title: "2020 in review"
+comments: false
+keywords: ""
+---
+
+1. Keller Williams Realty Consumer
+
+In late 2018 I embarked on a new engineering journey, this time in Real Estate. I was hired to help out building a Cloud Infrastructure platform for the Consumer facing greenfield project @KWRI.
+
+We were going after Zillow, a major player in the field. Our team was amazing, ranging from designers, UI/UX enthusiasts, all the way to great full-stack JavaScript developers.
+
+I managed to squeeze myself somewhere in the middle, as a Site Reliability Engineer. It was quite a ride. Jumping between Node.js and SRE depending on the requirements, I finally started practicing DevOps methodologies full-time. The team needed a person to be in charge of all the infrastructural changes that started happening being in a fast-paced development environment. We couldn't handle any more manual changes in IAM, non-programmatic additions to our storage buckets, deployments of new microservices (starting with 20 of them), and handling of all our serverless workloads such as lambdas and managed dockers. I decided to take full responsibility of those tasks.
+
+I also decided to fully integrate with KW teams on separate projects to reuse their infrastructural patterns. You definitely don't want to introduce yet another methodology if there's an existing, working one already in-place. 
+
+To deploy all infrastructure configuration we used Terraform, an laC tool from Hashicorp. For front-facing services me have decided to go with GCP's App Engine, which we later abandoned for GKE.
+
+All the microservices were running on GKE, fronted with LBs and GraphQL proxies using Redis Memory Cache. We also had a few Google Cloud Functions in place. Backend was MongoDB in Atlas and Elasticsearch in Elastic Cloud, but the data in that one got migrated to Atlas, so we closed it out.
+
+For Continuous Integration and Deployment we leveraged Travis-Cl, talking to GitHub and GKE, using tight IAM service accounts. LightStep was used for performance monitoring and logging of microservices.
+
+It was a rollercoaster ride (ended mid 2020, with the whole team delivering on the expectations), and I learned tons on new tech but also about myself. The latter, in TL;DR, being to "Keep it Simple!”. Not all new tech solutions should be taken for granted. I should still count in proven, stable ones!
+Onto the next one!
+
+1. Shipped my first SaaS product
+
+foo
