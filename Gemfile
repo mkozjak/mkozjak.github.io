@@ -6,6 +6,7 @@ group :jekyll_plugins do
     gem "jekyll-paginate"
     gem "github-pages"
 end
-gem 'html-proofer'
-gem 'tzinfo'
-gem 'tzinfo-data'
+gem "html-proofer"
+gem "tzinfo"
+gem "tzinfo-data"
+gem "nokogiri", ">= 1.11.0.rc4"
