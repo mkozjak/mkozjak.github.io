@@ -10,12 +10,12 @@ title: Home
     <h2 class="category-title">Posts</h2>
     {% for post in site.posts %}
       {% unless post.next %}
-        <h4 class="category-title">{{ post.date | date: '%Y' }}</h4>
+        <h4 id="posts" class="category-title">{{ post.date | date: '%Y' }}</h4>
       {% else %}
         {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
         {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
         {% if year != nyear %}
-          <h4 class="category-title">{{ post.date | date: '%Y' }}</h4>
+          <h4 id="posts" class="category-title">{{ post.date | date: '%Y' }}</h4>
         {% endif %}
       {% endunless %}
       <article class="post-item">
@@ -25,8 +25,7 @@ title: Home
     {% endfor %}
   </div>
 </section>
-
-<section class="tweets">
+<section id="tweets" class="tweets">
   <div class="container">
     <h2 class="post-list-heading">Tweets</h1>
     <a class="twitter-timeline" href="https://twitter.com/mariokozjak" data-tweet-limit="5" data-chrome="nofooter noheader"></a>
