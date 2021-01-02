@@ -29,6 +29,16 @@ permalink: /about/
 - Telnet client library for Node.js, <a href="https://github.com/mkozjak/node-telnet-client">node-telnet-client</a>
 - Koa.js caching library, <a href="https://github.com/mkozjak/koa-cache-lite">koa-cache-lite</a>
 
+#### Certifications I acquired
+- AWS Certified Solutions Architect - Associate
+  - Credential ID <a href="https://www.youracclaim.com/badges/8fd2b9e7-87c8-4e94-9db3-e0338cbd027b">R58WQZZKPEQQQ4W0</a>
+- Certified Widevine Integration Partner
+- BeeSmart BS-TR-1
+
+#### Formal education
+- Master of Science - Software modeled and simulated Railway Traffic Optimizations on the R201 Croatian line section
+  - Faculty of Traffic Engineering, Zagreb, Croatia
+
 #### Projects I volunteered on
 - Oct 2008 - Technical and executive support, Pro-Rail Alliance 🛤️
   - Integrated Public Passenger Transport
