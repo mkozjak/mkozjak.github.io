@@ -15,7 +15,7 @@ h6 {
   font-family: $heading-font-family;
   font-size: $base-font-size;
   line-height: $heading-line-height;
-  margin: $small-spacing 0 $small-spacing 0;
+  margin: 2*$small-spacing 0 $small-spacing 0;
   font-weight: 700;
 }
 
