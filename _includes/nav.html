@@ -6,9 +6,9 @@
     </a>
     <ul class="navbar">
       <li><a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About</a></li>
-      <!-- <li><a href="{{ '/services' | prepend: site.baseurl | prepend: site.url }}">Consultancy</a></li> -->
+      <li><a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">Consultancy</a></li>
       <li><a href="{{ '/articles' | prepend: site.baseurl | prepend: site.url }}">Articles</a></li>
-      <li><a href="mailto:kozjakm1@gmail.com" target="_blank">Mail</a></li>
+      <li><a href="mailto:{{ site.email }}" target="_blank">Mail</a></li>
     </ul>
   </div>
 </nav>

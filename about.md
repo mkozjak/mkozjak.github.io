@@ -52,7 +52,7 @@ permalink: /about/
 - <a class="link" target="_blank" href="https://chronzy.com/{{ site.chronzy_username }}">chronzy</a>
 - <a class="link" target="_blank" href="https://www.twitter.com/{{ site.twitter_username }}">twitter</a>
 - <a class="link" target="_blank" href="http://fb.me/{{ site.facebook_username }}">facebook</a>
-- <a class="link" target="_blank" href="mailto:kozjakm1@gmail.com">email</a>
+- <a class="link" target="_blank" href="mailto:{{ site.email }}">email</a>
 - <a class="link" target="_blank" href="https://www.github.com/{{ site.github_username }}">github</a>
 - <a class="link" target="_blank" href="https://www.last.fm/user/{{ site.lastfm_username }}">lastfm</a>
 - <a class="link" target="_blank" href="https://mario.kozjak.io/online-cv">online-cv</a>
