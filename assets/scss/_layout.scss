@@ -61,6 +61,12 @@ hr {
   margin-right: auto;
   max-width: 800px;
   font-weight: normal;
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
+}
+
+h1.page-title {
+  padding-left: $base-spacing/2;
 }
 
 .pull-left {
