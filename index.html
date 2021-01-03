@@ -1,34 +1,40 @@
 ---
-layout: default
-title: Home
+layout: page
+title: ''
+permalink: /
 ---
 
-{% include intro.html %}
+<div>
+  <h1>Are You Looking For A Freelance DevOps Engineer?</h1>
 
-<section class="post-list">
-  <div class="container">
-    <h2 class="category-title">Posts</h2>
-    {% for post in site.posts %}
-      {% unless post.next %}
-        <h4 id="posts" class="category-title">{{ post.date | date: '%Y' }}</h4>
-      {% else %}
-        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
-        {% if year != nyear %}
-          <h4 id="posts" class="category-title">{{ post.date | date: '%Y' }}</h4>
-        {% endif %}
-      {% endunless %}
-      <article class="post-item">
-        <span class="post-meta date-label">{{ post.date | date: "%b %d" }}</span>
-        <div class="article-title"><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></div>
-      </article>
-    {% endfor %}
-  </div>
-</section>
-<section id="tweets" class="tweets">
-  <div class="container">
-    <h2 class="post-list-heading">Tweets</h1>
-    <a class="twitter-timeline" href="https://twitter.com/mariokozjak" data-tweet-limit="5" data-chrome="nofooter noheader"></a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  </div>
-</section>
+  <h2>What can an Expert DevOps Engineer do for you? 🧙</h2>
+  <p>Common scenarios where I deliver successful projects:
+    <ol>
+      <li>Provide guidance on software development and deployment <strong>methodologies</strong> in the early stages of your project.</li>
+      <li><strong>Design</strong> and <strong>architect</strong> scalable and reliable cloud and hybrid systems.</li>
+      <li>Implement Git techniques such as <strong>GitHub Flow</strong> and <strong>GitFlow</strong> to split your application deployments between production, staging, QA and development environments.</li>
+      <li>Scale your applications using managed <strong>container</strong> services such as AWS ECS and GCP App Engine or managed <strong>Kubernetes</strong> services such as AWS EKS and GCP GKE.</li>
+      <li>Secure your application environments defining least-privilege <strong>IAM policies</strong> for your workloads and <strong>hardening</strong> your APIs using firewalls and CDN/Load Balancing services.</li>
+      <li>Implement <strong>custom solutions</strong> required for your products.</li>
+      <li>Automate your testing and deployment processes creating <strong>CI/CD pipelines</strong> using platforms such as Jenkins, Travis-CI.</li>
+      <li><strong>Migrate</strong> your on prem applications to the cloud environment such as AWS, GCP and Azure.</li>
+      <li>Import and configure your current cloud infrastructure with <strong>Infrastructure-as-Code</strong> using tools such as Terraform, CloudFormation.</li>
+      <li>Package your applications into <strong>Docker</strong> containers and make them publicly available.</li>
+    </ol>
+  </p>
+
+  <h2>Why is Mario Kozjak the right fit for your project? 👋</h2>
+  <p>I take full ownership over the things I build.</p>
+  <p>I am highly autonomous and can find my way around every obstacle that may come my way.</p>
+  <p>I have over 10 years of experience dealing with development, deployment and integration of various in-house, 3rd party and open-source systems spanning industries like IPTV, ISP, Industrial and Real Estate.</p>
+  <p>I want to partner with you on your cloud projects for the long-term. From planning, through to development and future improvements.</p>
+  <p>I prefer quality over quantity.</p>
+  <p>I believe in simplicity over complexity.</p>
+  <p>I care about conventions.</p>
+  <p>I'm an avid open-source contributor.</p>
+
+  <h2>Ready to start the project together? 🚀</h2>
+  <p>I can't wait to get more details on products we're going to build!</p>
+
+  <p>Please <a href="mailto:kozjakm1@gmail.com" target="_blank">email me</a> and I will be more than happy to come back to you as soon as possible!</p>
+</div>
