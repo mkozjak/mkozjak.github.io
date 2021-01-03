@@ -1,7 +1,7 @@
 # Site settings
 title_left    : "Mario "
 title_right   : "Kozjak" # default: ""
-description   : "Mario Kozjak's blog"
+description   : "I am a reliable, self organized Senior Software Engineer. I can help you build your platform in the clouds!"
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url           : https://mario.kozjak.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
