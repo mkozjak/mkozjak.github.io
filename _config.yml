@@ -1,4 +1,5 @@
 # Site settings
+title_opt     : "Freelance DevOps Engineer"
 title_left    : "Mario "
 title_right   : "Kozjak" # default: ""
 description   : "I am a reliable, self organized Senior Software Engineer. I can help you build your platform in the clouds!"
@@ -9,11 +10,12 @@ cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-XXXXX-XX
 twitter_username  : "mariokozjak"
-facebook_username  : "mkozjak1"
+facebook_username : "mkozjak1"
 github_username   : "mkozjak"
 linkedin_username : "mario-kozjak-a9665b72"
-chronzy_username : "mkozjak"
-lastfm_username : "archman47"
+chronzy_username  : "mkozjak"
+lastfm_username   : "archman47"
+email             : "mario.kozjak@elpheria.com"
 comments_enabled  : false # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : ""
 postshare_enabled : false

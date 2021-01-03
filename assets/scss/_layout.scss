@@ -49,12 +49,33 @@ hr {
   margin: 22px;
 }
 
+.page-title {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  font-weight: bold;
+}
 .container {
-  padding: $base-spacing;
+  // padding: $base-spacing;
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
   font-weight: normal;
+  padding-left: $base-spacing;
+  padding-right: $base-spacing;
+}
+
+.checkmark {
+  display: inline;
+}
+.checkmark:after {
+  display: inline;
+  content: '\2714 \fe0e';
+  color: $blue-color;
+}
+
+h1.page-title {
+  padding-left: $base-spacing/2;
 }
 
 .pull-left {
@@ -87,6 +108,10 @@ hr {
 
 .site-footer {
   text-align: center;
+}
+
+.a:hover {
+  color: #0086B3;
 }
 
 .intro {
@@ -307,7 +332,7 @@ ul.navbar {
     &:hover,
     &:focus,
     &:active {
-      border-bottom: 2px solid transparent;
+      border-bottom: 2px solid $blue-color;
       color: $blue-color;
     }
   }
