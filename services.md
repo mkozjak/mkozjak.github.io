@@ -40,4 +40,4 @@ I'm an avid open-source contributor.
 
 I can't wait to get more details on products we're going to build!
 
-Please <a href="mailto:kozjakm1@gmail.com" target="_blank">email me</a> and I will be more than happy to come back to you as soon as possible!
+Please <a href="mailto:{{ site.email }}" target="_blank">email me</a> and I will be more than happy to come back to you as soon as possible!

@@ -1,7 +1,8 @@
 # Site settings
+title_opt     : "Freelance DevOps Engineer"
 title_left    : "Mario "
 title_right   : "Kozjak" # default: ""
-description   : "Mario Kozjak's blog"
+description   : "Mario Kozjak"
 keywords      : "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
 url           : https://mario.kozjak.io # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
@@ -9,11 +10,12 @@ cover         : "" # image uri like logo/cover image for site seo
 
 google_analytics  : UA-XXXXX-XX
 twitter_username  : "mariokozjak"
-facebook_username  : "mkozjak1"
+facebook_username : "mkozjak1"
 github_username   : "mkozjak"
 linkedin_username : "mario-kozjak-a9665b72"
-chronzy_username : "mkozjak"
-lastfm_username : "archman47"
+chronzy_username  : "mkozjak"
+lastfm_username   : "archman47"
+email             : "mario.kozjak@elpheria.com"
 comments_enabled  : false # if enabled (set to true), please provide your disqus_username
 disqus_shortname  : ""
 postshare_enabled : false
