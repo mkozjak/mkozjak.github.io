@@ -31,11 +31,20 @@ body {
   background-color: $base-background-color;
 }
 
+td {
+  padding: 0;
+  border: none;
+}
+
 hr {
   border-top: none;
   border-bottom: 2px solid lighten($light-gray-color, 7%);
   width: 100%;
   margin: $small-spacing 0;
+}
+
+.testimonial-message td {
+  border: none;
 }
 
 .header-avatar img {
