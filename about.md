@@ -10,6 +10,7 @@ permalink: /about/
 - Developing an **IoT edge gateway platform**, <a class="link" href="https://www.edgebind.io">Edgebind</a> 💡
   - Greenfield project based on Amazon Web Services
   - Lambda, DynamoDB, AWS IoT, ECS, IAM integration
+- Cloud engineering for an **Online Meeting platform**, <a class="link" href="https://www.bramble.live">Bramble</a>, by <a class="link" href="https://artery.is">Artery</a>, via <a class="link" href="https://x-team.com">X-Team</a> 🎸
 
 #### Products I helped to build
 - Aug 2018 - **DevOps Engineer**, Keller Williams Realty <a class="link" href="https://apps.apple.com/us/app/kw-buy-sell-real-estate/id652512924">Consumer</a> 🏡
