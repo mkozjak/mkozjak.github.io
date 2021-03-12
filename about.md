@@ -56,4 +56,4 @@ permalink: /about/
 - <a class="link" target="_blank" href="mailto:{{ site.email }}">email</a>
 - <a class="link" target="_blank" href="https://www.github.com/{{ site.github_username }}">github</a>
 - <a class="link" target="_blank" href="https://www.last.fm/user/{{ site.lastfm_username }}">lastfm</a>
-- <a class="link" target="_blank" href="https://mario.kozjak.io/online-cv">online-cv</a>
+- <a class="link" target="_blank" href="https://www.mariokozjak.com/online-cv">online-cv</a>

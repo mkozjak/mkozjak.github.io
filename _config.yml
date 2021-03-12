@@ -4,7 +4,7 @@ title_left    : "Mario "
 title_right   : "Kozjak" # default: ""
 description   : "I am a reliable, self organized Senior Software Engineer. I can help you build your platform in the clouds!"
 keywords      : "devops, sre, kubernetes, terraform, aws, gcp, cloud, practitioner, software, engineer"
-url           : https://mario.kozjak.io # site url
+url           : https://www.mariokozjak.com # site url
 baseurl       : "" # apply repo name like "/myproject" if used under gh-pages branch, else (under master branch) just leave empty/blank
 cover         : "https://avatars2.githubusercontent.com/u/3506172?s=460&u=12b3e79646d7f9d1180a090167ecff0242808d5f&v=4" # image uri like logo/cover image for site seo
 
