@@ -24,7 +24,7 @@ permalink: /about/
   - Remote management system development for Customer STBs
 - Nov 2011 - **Linux System Administrator**, <a class="link" href="https://www.iskon.hr">Iskon Broadband Services</a> 🌐
   - Management and configuration of Customer STBs, CPEs and DSLAMs
-  - Technical support
+  - L3 Technical support
   - 24/7 On-Call
 
 #### Notable Open-Source projects I own
