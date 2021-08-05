@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Onboarding and provisioning of devices"
+title: "Onboarding and provisioning of remotely-connected devices"
 comments: false
 keywords: "edge iot onboarding provisioning edgebind"
 ---
