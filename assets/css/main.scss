@@ -5,5 +5,13 @@
 @import "main";
 
 code {
-    font-size: 14px;
+  font-size: 14px;
+}
+
+img[alt=picture] {
+  display: block;
+  margin: auto;
+  margin-top: 36px;
+  margin-bottom: 36px;
+  width: 90%;
 }
