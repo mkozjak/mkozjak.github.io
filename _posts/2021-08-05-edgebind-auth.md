@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "User Auth pt.1: AWS authentication"
+title: "User Auth, Part 1: AWS authentication"
 comments: false
 keywords: "aws cognito terraform authentication"
 ---
@@ -91,7 +91,7 @@ In order to fetch some more details from our user, we need to write some more co
 Now we're set to get our sign up details page rendered:
 ![picture](/assets/images/blog-auth-edgebind-1c.png)
 
-Once the `Create a New Account` button is clicked, a function called `register` in the `auth` controller source file is called. It uses amplify-js' <a href="https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js#sign-up" target="_blank">Auth.signUp</a> method to register the user to AWS Cognito User Pool:
+Once the `Create Account` button is clicked, a function called `register` in the `auth` controller source file is called. It uses amplify-js' <a href="https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js#sign-up" target="_blank">Auth.signUp</a> method to register the user to AWS Cognito User Pool:
 ```js
 async register(event) {
     try {
