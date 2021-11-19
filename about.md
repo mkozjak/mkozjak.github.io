@@ -9,8 +9,9 @@ permalink: /about/
 #### What I'm currently working on
 - Developing an **IoT edge gateway platform**, <a class="link" href="https://www.edgebind.io">Edgebind</a> 💡
   - Greenfield project based on Amazon Web Services
-  - Lambda, DynamoDB, AWS IoT, ECS, IAM integration
-- Cloud engineering for an **Online Meeting platform**, <a class="link" href="https://www.bramble.live">Bramble</a>, by <a class="link" href="https://artery.is">Artery</a>. 🎸
+  - Lambda, DynamoDB, AWS IoT, ECS, IAM integration, Terraform
+- Cloud engineering for an **Online Meeting platform**, <a class="link" href="https://www.bramble.live">Bramble</a>, by <a class="link" href="https://artery.is">Artery</a> 🎸
+  - AWS EC2 Auto Scaling Groups, CloudFront CDN, Terraform, GitHub Actions, Ansible, Docker
 
 #### Products I helped to build
 - Aug 2021 - **DevOps Engineer**, <a class="link" href="https://www.chronzy.com">Chronzy</a> 😊
