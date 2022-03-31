@@ -30,7 +30,7 @@ Areas that must be covered in such a platform are:
  * Automated application deployment
  * Cloud-native, resilient environment
 
-Engineers shouldn't face this many layers straight into the beginning of their projects. Yet completely ignoring these areas early on in the process might result in *huge* technical debts. IT environments should be <u><a href="https://www.edgebind.io/#turn-into-manageable">architected well in order to be resilient, secure and manageable</a></u>.
+Engineers shouldn't face this many layers straight into the beginning of their projects. Yet completely ignoring these areas early on in the process might result in *huge* technical debts. IT environments should be <u><a href="https://www.elpheria.com/products/edgebind/#turn-into-manageable">architected well in order to be resilient, secure and manageable</a></u>.
 
 We need to plan ahead to easily scale in future.
 
