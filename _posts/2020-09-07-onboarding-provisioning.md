@@ -95,7 +95,7 @@ $ node app.js
 
 Your device should now receive a defined action from the server. This was just an example of how you can start building your own solution for your gateway device management. There's quite a lot of work to do aside from the application itself, like the preparation of custom secure device images, ensuring a safe and stable application runtime and layering of modular application actions that serve certain business needs you might have.
 
-To ease off this burden from our customers, <u><a href="https://www.edgebind.io">Edgebind</a></u> takes care of these tasks by providing an easy and intuitive onboarding user interface that prepares the device according to customer’s specifications. Customers are able to choose between importing their existing devices and buying a device delivered to their premises physically once fully prepared for Zero Touch Provisioning.
+To ease off this burden from our customers, <u><a href="https://www.elpheria.com/products/edgebind">Edgebind</a></u> takes care of these tasks by providing an easy and intuitive onboarding user interface that prepares the device according to customer’s specifications. Customers are able to choose between importing their existing devices and buying a device delivered to their premises physically once fully prepared for Zero Touch Provisioning.
 
 **Own your device data**
 
@@ -103,7 +103,7 @@ Each of your devices need to have a single source of truth, a description or a m
 
 There are many choices to make when implementing such a system. SQL or NoSQL types of databases, TLS communication channels and database modeling are just some of them.
 
-<u><a href="https://www.edgebind.io">Edgebind</a></u> stores all device data in secure and highly available database instances, decoupled from both device and backend systems to ensure scalability and reliability.
+<u><a href="https://www.elpheria.com/products/edgebind">Edgebind</a></u> stores all device data in secure and highly available database instances, decoupled from both device and backend systems to ensure scalability and reliability.
 
 **The Principle of Least Privilege**
 

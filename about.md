@@ -7,7 +7,7 @@ permalink: /about/
 {% include intro.html %}
 
 #### What I'm currently working on
-- Developing an **IoT edge gateway platform**, <a class="link" href="https://www.edgebind.io">Edgebind</a> 💡
+- Developing an **IoT edge gateway platform**, <a class="link" href="https://www.elpheria.com/products/edgebind/">Edgebind</a> 💡
   - Greenfield project based on Amazon Web Services
   - Lambda, DynamoDB, AWS IoT, ECS, IAM integration, Terraform
 - Cloud engineering for an **Online Meeting platform**, <a class="link" href="https://www.bramble.live">Bramble</a>, by <a class="link" href="https://artery.is">Artery</a> 🎸
