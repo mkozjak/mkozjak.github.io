@@ -8,4 +8,4 @@ end
 gem "html-proofer"
 gem "tzinfo"
 gem "tzinfo-data"
-gem "nokogiri", ">= 1.11.4"
+gem "nokogiri", ">= 1.13.6"
