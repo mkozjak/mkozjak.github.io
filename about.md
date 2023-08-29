@@ -11,7 +11,7 @@ permalink: /about/
   - Greenfield project based on Amazon Web Services
   - Lambda, DynamoDB, AWS IoT, ECS, IAM integration, Terraform
 - Cloud engineering for an **Online Meeting platform**, <a class="link" href="https://www.bramble.live">Bramble</a>, by <a class="link" href="https://artery.is">Artery</a> 🎸
-  - AWS EC2 Auto Scaling Groups, CloudFront CDN, Terraform, GitHub Actions, Ansible, Docker
+  - AWS EC2 Auto Scaling Groups, CloudFront CDN, Terraform, Packer, GitHub Actions, Ansible, Docker
 
 #### Products I helped to build
 - Aug 2021 - **DevOps Engineer**, <a class="link" href="https://www.chronzy.com">Chronzy</a> 😊
