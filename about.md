@@ -16,7 +16,7 @@ permalink: /about/
   - Development environments, S3 storage, IAM security
   - EC2 Auto Scaling Groups
 - Feb 2021 - **Lead DevOps Engineer**, More Than A Fan, <a class="link" href="https://web.archive.org/web/20230920015524/https://www.bramble.live/">Bramble</a>, an Online Meeting platform 🤩
-  - Drastic reduction of complexity and tech debt, Cloud infrastructure redesign
+  - Pivotal reduction of complexity and tech debt, Cloud infrastructure redesign
   - ~60% monthly Cloud cost reduction
   - Team mentorship and gap minimization between Team collab
 - Aug 2018 - **DevOps Engineer**, Keller Williams Realty <a class="link" href="https://apps.apple.com/us/app/kw-buy-sell-real-estate/id652512924">Consumer</a> 🏡
