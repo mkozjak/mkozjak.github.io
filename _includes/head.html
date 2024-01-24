@@ -51,9 +51,9 @@
   {% assign page_image = '' %}
   {% capture page_image %}
       {% if page.cover %}
-          {{ page.cover | prepend: site.baseurl | prepend: site.url }}
+          {{ page.cover }}
       {% else %}
-          {{ site.cover | prepend: site.baseurl | prepend: site.url }}
+          {{ site.cover }}
       {% endif %}
   {% endcapture %}
   {% capture page_image %}{{ page_image | strip | rstrip | lstrip | escape | strip_newlines }}{% endcapture %}
