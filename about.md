@@ -34,6 +34,7 @@ permalink: /about/
   - 24/7 On-Call
 
 #### Notable Open-Source projects I own
+- Bluesound TUI for controlling a HiFi Bluesound player, <a class="link" href="https://github.com/mkozjak/blutui">blutui</a>
 - WebSockets library with JSON RPC 2.0 support on top, <a class="link" href="https://github.com/elpheria/rpc-websockets">rpc-websockets</a>
 - Telnet client library for Node.js, <a class="link" href="https://github.com/mkozjak/node-telnet-client">node-telnet-client</a>
 - Koa.js caching library, <a class="link" href="https://github.com/mkozjak/koa-cache-lite">koa-cache-lite</a>
