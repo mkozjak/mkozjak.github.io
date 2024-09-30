@@ -7,6 +7,9 @@ permalink: /about/
 {% include intro.html %}
 
 #### What I'm currently working on
+- Leading **IoT** backend and cloud development, <a class="link" href="https://www.hitecpet.com">High Tech Pet</a> 🐾
+  - Brownfield modernization based on Google Cloud Platform
+  - Terraform, GCE, Docker, MQTT
 - Developing an **IoT edge gateway platform**, <a class="link" href="https://www.elpheria.com/products/edgebind/">Edgebind</a> 💡
   - Greenfield project based on Amazon Web Services
   - Lambda, DynamoDB, AWS IoT, ECS, IAM integration, Terraform
