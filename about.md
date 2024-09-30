@@ -21,7 +21,7 @@ permalink: /about/
 - Feb 2021 - **Lead DevOps Engineer**, More Than A Fan, <a class="link" href="https://web.archive.org/web/20230920015524/https://www.bramble.live/">Bramble</a>, an Online Meeting platform 🤩
   - Pivotal reduction of complexity and tech debt, Cloud infrastructure redesign
   - ~60% monthly Cloud cost reduction
-  - Team mentorship and gap minimization between Team collab
+  - Team mentorship and gap minimization between Engineering teams
 - Aug 2018 - **DevOps Engineer**, Keller Williams Realty <a class="link" href="https://apps.apple.com/us/app/kw-buy-sell-real-estate/id652512924">Consumer</a> 🏡
   - Cloud application rollout pipelines design and implementation
   - Terraform, Kubernetes, Docker, Serverless, IAM integration, Google Cloud Platform
@@ -37,6 +37,7 @@ permalink: /about/
   - 24/7 On-Call
 
 #### Notable Open-Source projects I own
+- Bluesound TUI for controlling a HiFi Bluesound player, <a class="link" href="https://github.com/mkozjak/blutui">blutui</a>
 - WebSockets library with JSON RPC 2.0 support on top, <a class="link" href="https://github.com/elpheria/rpc-websockets">rpc-websockets</a>
 - Telnet client library for Node.js, <a class="link" href="https://github.com/mkozjak/node-telnet-client">node-telnet-client</a>
 - Koa.js caching library, <a class="link" href="https://github.com/mkozjak/koa-cache-lite">koa-cache-lite</a>
