@@ -4,8 +4,6 @@ title: "Debugging OpenTelemetry: When Your Metrics Disappear Into The Void"
 comments: false
 keywords: "iot opentelemetry otel mqtt metrics google cloud"
 ---
-Debugging OpenTelemetry: When Your Metrics Disappear Into The Void
-==================================================================
 
 *September 16, 2025*
 
