@@ -108,7 +108,7 @@ processors:
       - context: log
         statements:
           # Note the log. prefixes - crucial for older collector versions
-          - set(log.attributes["uuid"], ParseJSON(log.body)["uui"])
+          - set(log.attributes["uuid"], ParseJSON(log.body)["uuid"])
           - set(log.attributes["uptime"], Int(ParseJSON(log.body)["uptime"]))
           - set(log.attributes["status"], 0) where ParseJSON(log.body)["status"] == "ok"
           - set(log.attributes["status"], 1) where ParseJSON(log.body)["status"] != "ok"
