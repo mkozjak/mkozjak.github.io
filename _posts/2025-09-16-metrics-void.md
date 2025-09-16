@@ -158,12 +158,8 @@ service:
 
 The whole debugging process took a few hours, but now our iot devices are happily sending uptime and status metrics to Google Cloud Monitoring. Sometimes the best solutions come from methodically working through each piece of the pipeline until you find where it's actually breaking.
 
-*Have you run into similar OpenTelemetry gotchas? I'd love to hear about your debugging adventures.*
+*Have you run into similar OpenTelemetry gotchas? I'd love to hear about your debugging adventures. Let's connect!*
 
 ## Bonus tip
 
-1. Never, and I mean, never, leave `debug` exporter running in production. You might skyrocket your bill after ingesting telemetry data for a small period of time. =)
-
----
-
-**Mario Kozjak** · [GitHub](https://github.com/mariokozjak) | [LinkedIn](https://linkedin.com/in/mariokozjak) | [Twitter
+1. Never, and I mean, **never** leave `debug` exporter running in production. You might skyrocket your bill after ingesting telemetry data for a small period of time. =)
