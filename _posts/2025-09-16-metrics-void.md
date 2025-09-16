@@ -8,7 +8,35 @@ keywords: "iot opentelemetry otel mqtt metrics google cloud"
 *September 16, 2025*
 
 Sometimes you think you've got everything set up perfectly, but then reality hits you like a freight train.
-That's exactly what happened when I was trying to wire and convert custom logs (simple heartbeats) from our IoT devices as metrics into Google Cloud Monitoring using OpenTelemetry.
+That's exactly what happened when I was trying to wire and convert custom logs (simple heartbeats) from our IoT devices as metrics into Google Cloud Monitoring using OpenTelemetry Collector.
+
+## The IoT Context: Why This Setup Exists
+
+Before diving into the debugging nightmare, let me explain the architecture that led to this problem. Our IoT devices run on ESP32 microcontrollers - these are resource-constrained embedded devices that can't afford the overhead of full OpenTelemetry instrumentation or HTTP/gRPC-based telemetry protocols.
+
+**The constraint:** ESP32 chips have limited memory and processing power, so we needed the most lightweight telemetry approach possible.
+
+**The solution:** MQTT publishing. The devices simply publish JSON messages containing device status and uptime data to specific MQTT topics. We use one of the standard MQTT brokers to handle the pub/sub routing for us.
+
+Here's what a typical heartbeat message from an IoT device looks like:
+```json
+{
+  "uuid": "12423535",
+  "uptime": 3600,
+  "status": "ok"
+}
+```
+
+**The bridge:** To get these MQTT messages into our OpenTelemetry observability stack, I wrote a custom OpenTelemetry receiver plugin that:
+1. Subscribes to the relevant MQTT topics on the broker
+2. Receives the JSON payloads from our ESP32 devices  
+3. Validates the message format
+4. Converts them into OpenTelemetry log records
+5. Injects them into the standard OpenTelemetry Collector pipeline
+
+From there, the `signaltometrics` connector transforms these log records into proper gauge metrics for device uptime and status, which then get exported to Google Cloud Monitoring.
+
+It's a neat setup that keeps the ESP32 devices simple while still getting rich telemetry data into our monitoring stack. When it works, that is.
 
 **The setup seemed straightforward:**
 - Receive and filter logs
