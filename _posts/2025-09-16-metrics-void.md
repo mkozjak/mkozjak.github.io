@@ -10,13 +10,13 @@ keywords: "iot opentelemetry otel mqtt metrics google cloud"
 Sometimes you think you've got everything set up perfectly, but then reality hits you like a freight train.
 That's exactly what happened when I was trying to wire and convert custom logs (simple heartbeats) from our IoT devices as metrics into Google Cloud Monitoring using OpenTelemetry Collector.
 
-## The IoT Context: Why This Setup Exists
+**The IoT Context: Why This Setup Exists**
 
 Before diving into the debugging nightmare, let me explain the architecture that led to this problem. Our IoT devices run on ESP32 microcontrollers - these are resource-constrained embedded devices that can't afford the overhead of full OpenTelemetry instrumentation or HTTP/gRPC-based telemetry protocols.
 
-**The constraint:** ESP32 chips have limited memory and processing power, so we needed the most lightweight telemetry approach possible.
+_The constraint_: ESP32 chips have limited memory and processing power, so we needed the most lightweight telemetry approach possible.
 
-**The solution:** MQTT publishing. The devices simply publish JSON messages containing device status and uptime data to specific MQTT topics. We use one of the standard MQTT brokers to handle the pub/sub routing for us.
+_The solution_: MQTT publishing. The devices simply publish JSON messages containing device status and uptime data to specific MQTT topics. We use one of the standard MQTT brokers to handle the pub/sub routing for us.
 
 Here's what a typical heartbeat message from an IoT device looks like:
 ```json
@@ -27,7 +27,7 @@ Here's what a typical heartbeat message from an IoT device looks like:
 }
 ```
 
-**The bridge:** To get these MQTT messages into our OpenTelemetry observability stack, I wrote a custom OpenTelemetry receiver plugin that:
+_The bridge_: To get these MQTT messages into our OpenTelemetry observability stack, I wrote a custom OpenTelemetry receiver plugin that:
 1. Subscribes to the relevant MQTT topics on the broker
 2. Receives the JSON payloads from our ESP32 devices  
 3. Validates the message format
@@ -38,16 +38,16 @@ From there, the `signaltometrics` connector transforms these log records into pr
 
 It's a neat setup that keeps the ESP32 devices simple while still getting rich telemetry data into our monitoring stack. When it works, that is.
 
-**The setup seemed straightforward:**
+The setup seemed straightforward:
 - Receive and filter logs
 - Parse JSON log bodies containing device status and uptime
 - Transform them into gauge metrics using the `signaltometrics` connector  
 - Export to Google Cloud Monitoring
 - Profit! 📈
 
-**What actually happened:** Metrics showed up as "active" in Google Cloud but with zero data points. Classic.
+What actually happened is that metrics showed up as "active" in Google Cloud but with zero data points. Classic.
 
-## The Detective Work Begins
+**The Detective Work Begins**
 
 First, I had to verify that the data pipeline was actually working. The beauty of OpenTelemetry is you can add a `file` exporter to see exactly what's being generated:
 
@@ -75,7 +75,7 @@ Running this showed me that metrics were being created perfectly:
 
 So the data was there. Google Cloud just wasn't showing it.
 
-## The Real Culprit: OTTL Version Mismatch
+**The Real Culprit: OTTL Version Mismatch**
 
 When I tried to send test data using `telemetrygen`, I hit this error:
 
@@ -97,7 +97,7 @@ Wait, what? The error showed `log.attributes` and `log.body`, but my config used
 
 Turns out OpenTelemetry Collector v0.130.0 still expected the older OTTL syntax with explicit `log.` prefixes. The newer documentation shows the simplified syntax, but not all collector versions support it yet.
 
-## The Missing Piece: Resource Detection
+**The Missing Piece: Resource Detection**
 
 Even after fixing the OTTL syntax, metrics still appeared under a "generic node" resource type instead of proper Kubernetes resources. The solution was adding the `resourcedetection` processor:
 
@@ -125,7 +125,7 @@ This automatically detected and added the proper GKE resource attributes:
 
 Now Google Cloud could properly categorize the metrics instead of lumping them under "generic node."
 
-## The Final Working Configuration
+**The Final Working Configuration**
 
 Here's what the complete working setup looked like:
 
@@ -174,20 +174,20 @@ service:
       exporters: [googlecloud]
 ```
 
-## Lessons Learned
+**Lessons Learned**
 
-1. **Always add debug exporters** when troubleshooting. The `file` and `debug` exporters are lifesavers for seeing what's actually happening in your pipeline. Do not use them in production indefinitely, though!
+1. Always add debug exporters when troubleshooting. The `file` and `debug` exporters are lifesavers for seeing what's actually happening in your pipeline. Do not use them in production indefinitely, though!
 
-2. **OTTL syntax varies by collector version.** Don't assume the latest documentation matches your collector version - check what your specific version expects.
+2. OTTL syntax varies by collector version. Don't assume the latest documentation matches your collector version - check what your specific version expects.
 
-3. **Resource detection is crucial for cloud platforms.** Without proper resource attributes, your metrics might get categorized incorrectly or not display at all.
+3. Resource detection is crucial for cloud platforms. Without proper resource attributes, your metrics might get categorized incorrectly or not display at all.
 
-4. **Test with known data first.** Using `telemetrygen` to send controlled test data helped isolate the OTTL parsing issue quickly.
+4. Test with known data first. Using `telemetrygen` to send controlled test data helped isolate the OTTL parsing issue quickly.
 
 The whole debugging process took a few hours, but now our iot devices are happily sending uptime and status metrics to Google Cloud Monitoring. Sometimes the best solutions come from methodically working through each piece of the pipeline until you find where it's actually breaking.
 
-*Have you run into similar OpenTelemetry gotchas? I'd love to hear about your debugging adventures. Let's connect!*
-
-## Bonus tip
+**Bonus tip**
 
 1. Never, and I mean, **never** leave `debug` exporter running in production. You might skyrocket your bill after ingesting telemetry data for a small period of time. =)
+
+*Have you run into similar OpenTelemetry gotchas? I'd love to hear about your debugging adventures. Let's connect!*
