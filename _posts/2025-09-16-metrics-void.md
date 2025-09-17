@@ -5,8 +5,6 @@ comments: false
 keywords: "iot opentelemetry otel mqtt metrics google cloud"
 ---
 
-*September 16, 2025*
-
 Sometimes you think you've got everything set up perfectly, but then reality hits you like a freight train.
 That's exactly what happened when I was trying to wire and convert custom logs (simple heartbeats) from our IoT devices as metrics into Google Cloud Monitoring using OpenTelemetry Collector.
 
