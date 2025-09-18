@@ -25,7 +25,7 @@ Here's what a typical heartbeat message from an IoT device looks like:
 }
 ```
 
-_The bridge_: To get these MQTT messages into our OpenTelemetry observability stack, I wrote a custom OpenTelemetry receiver plugin that:
+_The bridge_: To get these MQTT messages into our OpenTelemetry observability stack, I wrote a custom OpenTelemetry receiver plugin (which I covered in detail in my [previous post about building custom receivers](/2025/building-a-custom-opentelemetry-receiver-for-iot-device-telemetry/)) that:
 1. Subscribes to the relevant MQTT topics on the broker
 2. Receives the JSON payloads from our ESP32 devices  
 3. Validates the message format
