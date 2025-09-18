@@ -25,9 +25,9 @@ Here's what a typical heartbeat message from an IoT device looks like:
 }
 ```
 
-_The bridge_: To get these MQTT messages into our OpenTelemetry observability stack, I wrote a custom OpenTelemetry receiver plugin (which I covered in detail in my [previous post about building custom receivers](/2025/building-a-custom-opentelemetry-receiver-for-iot-device-telemetry/)) that:
+_The bridge_: To get these MQTT messages into our OpenTelemetry observability stack, I wrote a custom OpenTelemetry receiver plugin (which I covered in detail in my [previous post about building custom receivers](https://www.mariokozjak.com/2025/custom-otel-receiver)) that:
 1. Subscribes to the relevant MQTT topics on the broker
-2. Receives the JSON payloads from our ESP32 devices  
+2. Receives the JSON payloads from our ESP32 devices
 3. Validates the message format
 4. Converts them into OpenTelemetry log records
 5. Injects them into the standard OpenTelemetry Collector pipeline
@@ -39,7 +39,7 @@ It's a neat setup that keeps the ESP32 devices simple while still getting rich t
 The setup seemed straightforward:
 - Receive and filter logs
 - Parse JSON log bodies containing device status and uptime
-- Transform them into gauge metrics using the `signaltometrics` connector  
+- Transform them into gauge metrics using the `signaltometrics` connector
 - Export to Google Cloud Monitoring
 - Profit! 📈
 
@@ -78,8 +78,8 @@ So the data was there. Google Cloud just wasn't showing it.
 When I tried to send test data using `telemetrygen`, I hit this error:
 
 ```
-failed processing logs: failed to execute statement: 
-set(log.attributes["uuid"], ParseJSON(log.body)["uuid"]), 
+failed processing logs: failed to execute statement:
+set(log.attributes["uuid"], ParseJSON(log.body)["uuid"]),
 key not found in map
 ```
 
@@ -89,7 +89,7 @@ Wait, what? The error showed `log.attributes` and `log.body`, but my config used
 # What I had
 - set(attributes["uuid"], ParseJSON(body)["uuid"])
 
-# What the collector actually expected  
+# What the collector actually expected
 - set(log.attributes["uuid"], ParseJSON(log.body)["uuid"])
 ```
 
@@ -118,7 +118,7 @@ I'm running Kubernetes on Google Cloud, so the `gcp` detector was sufficient.
 
 This automatically detected and added the proper GKE resource attributes:
 - `k8s.cluster.name`
-- `cloud.availability_zone` 
+- `cloud.availability_zone`
 - `host.name`
 
 Now Google Cloud could properly categorize the metrics instead of lumping them under "generic node."
@@ -154,7 +154,7 @@ connectors:
         attributes:
           - key: uuid
       - name: device.status
-        description: iot device status signals  
+        description: iot device status signals
         gauge:
           value: attributes["status"]
         attributes:
@@ -167,7 +167,7 @@ service:
       processors: [transform/parse_device_body]
       exporters: [signaltometrics]
     metrics:
-      receivers: [signaltometrics] 
+      receivers: [signaltometrics]
       processors: [resourcedetection]
       exporters: [googlecloud]
 ```
