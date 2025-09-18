@@ -5,96 +5,102 @@ comments: false
 keywords: "iot opentelemetry otel mqtt metrics google cloud"
 ---
 
-When you're dealing with IoT devices that communicate over message brokers, getting their telemetry data into your observability stack can be challenging. Standard OpenTelemetry receivers expect HTTP or gRPC endpoints, but many IoT devices publish data to message brokers using lightweight protocols. This is the story of how I built a custom OpenTelemetry receiver to bridge this gap.
+So there I was, staring at a fleet of IoT devices communicating with a message broker, and trying to get their data into my observability stack.
 
-**The Problem**
+The thing is, these devices aren't your typical web services. They're running on ESP32 microcontrollers with limited memory and processing power, so they can't handle protocols like HTTP or gRPC. But they still needed to be monitored just like everything else in my infrastructure.
 
-I had a fleet of IoT devices sending telemetry data to a message broker. These devices were publishing structured JSON messages containing logs, heartbeats, and status information. Each message included a device identifier, message type, and payload data.
+**When Standard Solutions Don't Cut It**
 
-The challenge was getting this data into my OpenTelemetry-based observability pipeline. I needed a way to:
+I had a bunch of devices publishing JSON messages to MQTT topics - stuff like heartbeats, error logs, and status updates. Each message had a device ID, message type, and some payload data. Pretty straightforward, except for one problem: OpenTelemetry receivers expect standard protocols, not lightweight pub/sub messaging.
 
-1. Subscribe to message broker topics
-2. Parse the incoming JSON messages
-3. Convert them to OpenTelemetry log format
-4. Extract metrics from specific message types (like heartbeats)
+I needed something that could:
 
-**The Solution: A Custom Receiver**
+1. Subscribe to message broker topics without breaking a sweat
+2. Parse incoming JSON reliably
+3. Convert everything to proper OpenTelemetry logs
+4. Extract metrics from heartbeats for monitoring
 
-OpenTelemetry Collector's architecture makes it possible to build custom components that fit your specific needs. Rather than trying to force-fit existing receivers or writing complex middleware, I decided to build a receiver that natively understood my device communication protocol.
+I could've tried forcing existing receivers to work, or built some middleware. But that felt like working around the problem instead of solving it properly.
 
-### Key Design Decisions
+**Going Custom: Because Sometimes You Have To**
 
-**Message Broker Integration**: The receiver establishes a persistent connection to the message broker and subscribes to device telemetry topics. This ensures real-time data flow without polling or batch processing delays.
+OpenTelemetry Collector's plugin architecture is quite powerful once you dig into it. Instead of fighting the system, I decided to build a receiver that understood my devices natively.
 
-**Intelligent Message Parsing**: Different device message types require different handling. Error messages become error-level logs, while heartbeat messages are processed to extract operational metrics like uptime and device status.
+Here's what I learned works well:
 
-**Dual-Purpose Data Flow**: The same incoming data stream serves two purposes - generating structured logs for debugging and troubleshooting, while simultaneously creating metrics for monitoring and alerting.
+**Keep the Connection Alive**: The receiver maintains a persistent connection to the message broker and subscribes to all the relevant topics. No polling, no batch processing delays - just real-time data flowing like it should.
 
-**Implementation Approach**
+**Smart Message Handling**: Different message types get different treatment. Error messages become error-level logs for when things go sideways. Heartbeat messages get processed into metrics because nothing says "device health" like a good uptime graph.
 
-Instead of modifying the core OpenTelemetry Collector, I built this as a proper extension using the collector's plugin architecture. This meant:
+**Double Duty**: The same data stream serves two purposes - structured logs for debugging and troubleshooting, and metrics for monitoring dashboards.
 
-- Creating a receiver factory that integrates with the collector's component system
-- Implementing proper lifecycle management (start, stop, error handling)
-- Converting raw device messages into OpenTelemetry's native log format
-- Adding appropriate metadata and attributes for downstream processing
+**Building It Right**
 
-The receiver handles connection management, automatic reconnection, and graceful shutdown scenarios.
+I built this as a proper OpenTelemetry extension using the official plugin architecture. This meant:
 
-**Advanced Pipeline Configuration**
+- Creating a receiver factory that plays nicely with the collector's component system
+- Implementing proper lifecycle management and error handling
+- Converting device messages into OpenTelemetry's native log format
+- Adding metadata that actually helps downstream processing
 
-One of the most powerful aspects of this solution is leveraging OpenTelemetry Collector's pipeline system. I configured multiple pipelines to handle different aspects of the data:
+The receiver handles all the boring stuff automatically - connection management, reconnection when things go wrong, graceful shutdowns when you want to deploy updates.
 
-- **Device Logs Pipeline**: Processes general device logs with appropriate filtering and routing
-- **Metrics Pipeline**: Converts heartbeat messages into time-series metrics for monitoring
-- **Error Pipeline**: Handles device error messages with specific alerting rules
+**Pipeline Magic**
 
-This separation allows for different retention policies, processing rules, and export destinations based on data type and importance.
+One of the coolest parts of this whole setup is leveraging OpenTelemetry's pipeline system. I ended up with multiple pipelines handling different aspects of the same data:
 
-**Custom Collector Distribution**
+- **Device Logs Pipeline**: General device logs with filtering and routing based on severity
+- **Metrics Pipeline**: Heartbeat messages converted to time-series data for monitoring
+- **Error Pipeline**: Dedicated handling for device errors with appropriate alerting
 
-To deploy this receiver, I built a custom OpenTelemetry Collector distribution using the official collector builder. This approach ensures:
+This separation allows for different retention policies, processing rules, and destinations. Error logs might go to alerting systems while general telemetry goes to long-term storage.
 
-- Version compatibility with the broader OpenTelemetry ecosystem
-- Easy deployment and configuration management
-- Integration with existing observability infrastructure
-- Future upgrade path as OpenTelemetry evolves
+**Deployment Reality Check**
 
-**Results and Benefits**
+To deploy this, I built a custom OpenTelemetry Collector distribution using the official builder tool. This involves telling the builder to include my custom receiver along with all the standard components.
 
-This custom receiver solved several critical problems:
+This approach gives me:
 
-**Real-time Visibility**: Device telemetry now flows directly into our observability stack in real-time, enabling immediate alerting on device issues.
+- Version compatibility with the rest of the OpenTelemetry ecosystem
+- Easy deployment (it's just another container)
+- Integration with existing infrastructure
+- A clear upgrade path as OpenTelemetry evolves
 
-**Unified Data Model**: All device data follows OpenTelemetry standards, making it compatible with any OpenTelemetry-compliant backend (Jaeger, Prometheus, cloud providers, etc.).
+**What Actually Happened**
 
-**Operational Metrics**: Heartbeat data automatically becomes metrics for monitoring device health, uptime, and connectivity status.
+This custom receiver solved problems I didn't even know I had:
 
-**Cost Optimization**: Intelligent filtering and processing rules ensure we're only storing and processing relevant data, reducing storage and compute costs.
+**Real-time Processing**: Device telemetry flows directly into my observability stack the moment it happens. No delays, no batch processing windows, no wondering about device status.
 
-**Scalability**: The receiver handles connection management and can scale with the device fleet without requiring architectural changes.
+**Standards Compliance**: All device data follows OpenTelemetry standards, which means it works with literally any OpenTelemetry-compatible backend. Jaeger, Prometheus, cloud providers - pick your poison.
 
-**Lessons Learned**
+**Automatic Metrics**: Heartbeat data automatically becomes metrics for monitoring device health without any extra processing. Device status changes are immediately visible.
 
-Building this custom receiver taught me several valuable lessons:
+**Cost Optimization**: Smart filtering and processing rules mean I'm only storing and processing data that actually matters, keeping cloud costs reasonable.
 
-**OpenTelemetry's Flexibility**: The collector's plugin architecture is more powerful than I initially realized. You can extend it to handle virtually any data source or protocol.
+**Scale When Ready**: The receiver handles connection management and can grow with my device fleet without requiring architectural changes. Started with dozens of devices, now handling hundreds.
 
-**Configuration Complexity**: As you add more processors and filters, configuration management becomes critical. Documentation and testing are essential.
+**Things I Wish I'd Known Earlier**
 
-**Signal Transformation**: The ability to convert logs to metrics (and vice versa) opens up interesting possibilities for deriving insights from different signal types.
+**OpenTelemetry is More Flexible Than You Think**: The collector's plugin architecture is seriously powerful. You can extend it to handle virtually any data source or protocol. Don't be afraid to go custom when it makes sense.
 
-**Production Considerations**: Real-world deployment requires careful attention to error handling, connection resilience, and monitoring the collector itself.
+**Configuration Gets Messy Fast**: As you add more processors and filters, keeping track of configuration becomes a real challenge. Document everything and test religiously.
 
-**When to Build Custom Components**
+**Signal Transformation is Gold**: The ability to convert logs to metrics (and vice versa) opens up crazy possibilities for deriving insights from your data.
 
-A custom receiver makes sense when:
+**Monitor the Monitor**: In production, you need to watch the collector itself. Connection failures, processing errors, resource usage - it all matters when you're depending on it for observability.
 
-- Your data sources don't speak standard protocols
+**When Custom Makes Sense**
+
+Building a custom receiver is worth it when:
+
+- Your data sources speak protocols that don't exist in standard receivers
 - You need real-time processing of specialized data formats
-- Existing receivers would require significant preprocessing
-- You want to optimize for your specific use case
+- Existing receivers would require significant preprocessing that defeats the purpose
+- You want to optimize for your specific use case instead of general solutions
 
-The investment in building custom OpenTelemetry components pays off when you have unique requirements that don't fit standard patterns. The result is a robust, maintainable solution that integrates seamlessly with the broader observability ecosystem.
+The time investment pays off when you have unique requirements that don't fit the standard mold. Plus, you end up with something that integrates seamlessly with the broader observability ecosystem.
 
-For teams dealing with IoT devices, industrial equipment, or other specialized telemetry sources, custom OpenTelemetry receivers offer a path to unified observability without compromising on functionality or performance.
+For anyone dealing with IoT devices, industrial equipment, or other specialized telemetry sources, custom OpenTelemetry receivers offer a path to unified observability without compromising on functionality. Just don't underestimate the configuration complexity - future you will thank present you for good documentation.
+
+*Got similar observability challenges? I'd love to hear how you're solving them. Hit me up!*
