@@ -125,9 +125,9 @@ The keyboard handler gets a clean API while the underlying `App` struct implemen
 
 If you can't give your interface a specific, meaningful name that describes exactly what it does, it's probably too broad.
 
-`Controller` ✅ - controls playback
-`FocusStopper` ✅ - manages focus and stops
-`AppManager` ❌ - manages... everything?
+`Controller` - controls playback
+`FocusStopper` - manages focus and stops
+`AppManager` - manages... everything?
 
 Go's small interfaces aren't a limitation—they're a feature that forces better design.
 
