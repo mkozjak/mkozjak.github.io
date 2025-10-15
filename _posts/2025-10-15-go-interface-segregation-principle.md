@@ -133,4 +133,4 @@ Go's small interfaces aren't a limitation—they're a feature that forces better
 
 ---
 
-*This approach reduced my testing complexity significantly and made the codebase much easier to navigate. Sometimes the best architecture decisions are the ones that make you write more interfaces, not fewer.
+*This approach reduced my testing complexity significantly and made the codebase much easier to navigate. Sometimes the best architecture decisions are the ones that make you write more interfaces, not fewer.*
