@@ -1,5 +1,6 @@
+@use "sass:math";
 $sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-
+ 
 // Typography
 // @import url('https://fonts.googleapis.com/css?family=Ubuntu Mono');
 $base-font-family: $sans-serif !default;
@@ -15,7 +16,7 @@ $heading-line-height: 1.2;
 // Other Sizes
 $base-border-radius: .52em;
 $base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
+$small-spacing: math.div($base-spacing, 2);
 $base-z-index: 0;
 
 // Colors
