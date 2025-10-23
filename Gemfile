@@ -1,12 +1,5 @@
 source "https://rubygems.org"
-gemspec
-group :jekyll_plugins do
-    gem "jekyll-sitemap"
-    gem "bourbon"
-    gem "jekyll-paginate"
-    gem "jekyll-seo-tag"
-end
-gem "html-proofer"
+gem "github-pages", group: :jekyll_plugins
 gem "tzinfo"
 gem "tzinfo-data"
 gem "nokogiri", ">= 1.18.9"

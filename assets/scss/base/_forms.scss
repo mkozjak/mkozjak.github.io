@@ -1,4 +1,4 @@
-@use "sass:math";
+
 
 fieldset {
   background-color: $secondary-background-color;
@@ -17,7 +17,7 @@ select {
 
 label {
   font-weight: 600;
-  margin-bottom: math.div($small-spacing, 2);
+  margin-bottom: ($small-spacing / 2);
 
   &.required::after {
     content: "*";
@@ -38,7 +38,7 @@ select[multiple=multiple] {
   font-family: $base-font-family;
   font-size: $base-font-size;
   margin-bottom: $small-spacing;
-  padding: math.div($base-spacing, 3);
+  padding: ($base-spacing / 3);
   transition: border-color $base-duration $base-timing;
   width: 100%;
 
@@ -73,7 +73,7 @@ input[type="search"] {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
-  margin-right: math.div($small-spacing, 2);
+  margin-right: ($small-spacing / 2);
 
   + label {
     display: inline-block;
