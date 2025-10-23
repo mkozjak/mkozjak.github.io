@@ -103,7 +103,7 @@ h1.page-title {
   padding-bottom: .05em;
   border-bottom: 2px solid transparent;
 
-  transition: border 100ms linear;
+  @include transition(border 100ms linear);
 
   &:hover,
   &:focus,
